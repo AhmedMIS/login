@@ -1,0 +1,31 @@
+<div class="bigbox">
+	<div class="box">
+		<%="THESE are Recieve messages"%>
+		<% @messages.each do |message| %>
+			<div class="message">
+				<div class="top-message">
+					<li class="writing"><%= message.message.body %></li>
+				</div>
+
+				<div class="bottom-message">
+					<span> From      </span><%= message.message.sender.name %>
+				</div>
+			</div>
+		<% end %>
+
+<h4>
+<%="THESE are Sent Messages messages"%>
+</h4>
+<% @s_messages.each do |rec| %>
+		<li class="writing"><%= rec.body%></li>
+
+
+		</li>
+<% end %>
+
+
+
+
+
+	</div>
+</div>

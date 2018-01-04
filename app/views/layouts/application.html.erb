@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%if user_signed_in?%>
+      <p>
+        Hello,
+        <%=current_user.name%>
+        This Person is a :
+        <%=current_user.t_user%>
+        <span></span>
+
+        <%= render 'layouts/header' %>
+      </p>
+    <%end%>
+
+    <%if !user_signed_in?%>
+      <p>
+        <%= link_to "Sign IN",new_user_session_path %>
+      </p>
+    <%end%>
+
+    <%= yield %>
+  </body>
+</html>

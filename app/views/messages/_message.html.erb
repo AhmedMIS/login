@@ -1,0 +1,26 @@
+<div >
+        <% if message.message.html.present? %>
+        <%= message.message.html.html_safe %>
+        <% end %>
+      </div>
+      <div >
+        <%= message.message.content %>
+      </div>
+      <div >
+        <div >
+          <div >
+            <span >
+
+            </span>
+            <span >
+            <%= link_to message.message.sender.name, message.message.sender %>
+            </span>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+<% end %>

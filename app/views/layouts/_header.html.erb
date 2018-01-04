@@ -1,0 +1,25 @@
+<header>
+  <div >
+      <%= link_to "Log out", destroy_user_session_path, method: "delete" %>
+    <div ><%= link_to 'Chat Ap Assignment', root_path %></div>
+
+    <ul id="js-navigation-menu" class="navigation-menu show">
+      <% if user_signed_in? %>
+
+        <div class="btn">
+
+
+<br/>
+
+          <%= link_to '<button type="button">CHAT</button>'.html_safe, new_message_path%>
+
+          <%= link_to '<button type="button">INBOX</button>'.html_safe, messages_path%>
+
+        <% else %>
+          <li class="nav-link"><%= link_to "Sign In", new_user_session_path %></li>
+          <li class="nav-link"><%= link_to "Register", new_user_registration_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>
